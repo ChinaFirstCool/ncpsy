@@ -89,6 +89,11 @@ public class QyController {
 		return qyEntity;
 	}
 
+	public static void main(String[] args) {
+		Long a = 1L;
+		Integer b = 1;
+		System.out.println(a.equals(b));
+	}
 	@RequestMapping("/user/get")
 	@ResponseBody
 	public Qy get(@RequestBody Qy qy) {

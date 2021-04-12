@@ -17,7 +17,7 @@
     
     <mvc:resources mapping="/static/**" location="/static/"/>
 
-    <!--视图解析器-->
+    <!--视图解析器 配合controller 跳转-->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/views/"

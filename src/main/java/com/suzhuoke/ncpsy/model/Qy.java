@@ -6,17 +6,19 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *     extends 关键字 继承的一种体现  Model 是mybatis自带的  类 不用关心他暂时
  * </p>
  *
- * @author RobinYoung10
- * @since 2019-02-17
  */
 @TableName("tb_qy")
 public class Qy extends Model<Qy> {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * qyid 企业id
+     * private 私有不能直接被外部修改。必须通过 get set 修改和获取   封装的一种体现
+     */
     private String qyid;
 
     private String zh;

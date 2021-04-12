@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.suzhuoke.ncpsy.dao.CrudMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.suzhuoke.ncpsy.model.Qy">
+        <id column="qyid" property="qyid" />
+        <result column="zh" property="zh" />
+        <result column="mm" property="mm" />
+        <result column="qymc" property="qymc" />
+        <result column="dz" property="dz" />
+        <result column="fzr" property="fzr" />
+        <result column="dh" property="dh" />
+        <result column="yx" property="yx" />
+        <result column="bz" property="bz" />
+    </resultMap>
+
+    <insert id="add">
+        INSERT INTO `tb_qy` (qyid,zh,mm,qymc,dz,fzr,dh,yx,bz)
+        VALUES (#{qy.qyid}, #{qy.zh}, #{qy.mm}, #{qy.qymc}, #{qy.dz}, #{qy.fzr}, #{qy.dh}, #{qy.yx}, #{qy.bz})
+    </insert>
+
+    <delete id="del">
+        delete from `tb_qy` where qyid = #{qyid}
+    </delete>
+
+    <update id="edit">
+        update tb_qy set
+        zh = #{qy.zh},
+        mm = #{qy.mm},
+        qymc = #{qy.qymc},
+        dz = #{qy.dz},
+        fzr = #{qy.fzr}
+        where qyid =  #{qy.qyid}
+    </update>
+
+    <select id="query" resultMap="BaseResultMap">
+        select qyid,zh,mm,qymc,dz,fzr,dh,yx,bz from tb_qy where qyid = #{qyid}
+    </select>
+</mapper>
